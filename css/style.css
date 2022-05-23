@@ -83,6 +83,52 @@ body {
   position: absolute;
   bottom: 10px;
   left: 10px;
+  width: 300px;
+  height: 20px;
+  text-align: center;
+}
+
+.news-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.news-box li {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  position: absolute;
+  transition: top 0.75s;
+  top: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-box li p {
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.card_sliding {
+  top: 0 !important;
+  z-index: 100 !important;
+}
+
+.card_sliding_after {
+  top: -100% !important;
+  z-index: 10 !important;
+}
+
+.before_slide {
+  transform: translateY(100%);
+}
+
+.after_slide {
+  transform: translateY(0);
 }
 
 #quote {
