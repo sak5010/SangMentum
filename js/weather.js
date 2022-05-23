@@ -5,9 +5,15 @@ function onGeoOK(position) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const city = document.querySelector("#weather span:first-child");
-      const weather = document.querySelector("#weather span:last-child");
+      const city = document.querySelector("#weather-main");
+      const weather = document.querySelector("#weather-temp");
       city.innerText = data.name;
+      const iconCode = data.weather[0].icon;
+      const iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+      $("#wicon").attr("src", iconUrl);
+      $(document).ready(function () {
+        $("#test").html("This is Hello World by JQuery");
+      });
       weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
     });
 }

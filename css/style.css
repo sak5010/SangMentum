@@ -96,6 +96,16 @@ body {
   right: 10px;
 }
 
+#weather-icon {
+  display: inline-block;
+}
+
+#wicon {
+  position: relative;
+  top: 20px;
+  left: 8px;
+}
+
 .hidden {
   display: none;
 }
