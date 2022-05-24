@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script
+      src="https://kit.fontawesome.com/091fde69cf.js"
+      crossorigin="anonymous"
+    ></script>
     <title>SangMentum</title>
   </head>
   <body>
@@ -18,14 +22,22 @@
       />
       <input type="submit" value="Log In" />
     </form>
-
     <h2 id="clock">00:00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
     <form id="todo-form">
       <input type="text" placeholder="Write a To Do and Press Enter" required />
     </form>
     <ul id="todo-list"></ul>
+    <div id="search">
+      <form id="search-form" name="search_form" action="">
+        <input id="search-text" type="text" />
+        <input type="submit" />
+      </form>
+    </div>
     <div id="news">
+      <div class="news-icon">
+        <a href="#search-text"><i class="fas fa-search"></i></a>
+      </div>
       <ul class="news-box">
         <li id="news-first" class="card_sliding"><p></p></li>
         <li id="news-second" class=""><p></p></li>
@@ -43,7 +55,6 @@
       <span id="weather-main"></span>
       <span id="weather-temp"></span>
     </div>
-    <div id="test"></div>
     <script src="js/background.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/greetings.js"></script>

@@ -11,9 +11,6 @@ function onGeoOK(position) {
       const iconCode = data.weather[0].icon;
       const iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
       $("#wicon").attr("src", iconUrl);
-      $(document).ready(function () {
-        $("#test").html("This is Hello World by JQuery");
-      });
       weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
     });
 }

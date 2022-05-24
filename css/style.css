@@ -79,6 +79,25 @@ body {
   border: none;
 }
 
+#search {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  width: 300px;
+  height: 30px;
+}
+
+#search input:first-child {
+  border: none;
+  background-color: transparent;
+  color: azure;
+  font-size: 16px;
+}
+
+#search input:last-child {
+  display: none;
+}
+
 #news {
   position: absolute;
   bottom: 10px;
@@ -86,10 +105,16 @@ body {
   width: 300px;
   height: 20px;
   text-align: center;
+  display: flex;
+}
+
+.news-icon {
+  width: 10%;
+  height: 20px;
 }
 
 .news-box {
-  width: 100%;
+  width: 90%;
   height: 100%;
   overflow: hidden;
   position: relative;
