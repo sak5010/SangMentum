@@ -24,7 +24,9 @@ let move = 2;
 let dataCnt = 1;
 let listCnt = 1;
 
-first.children[0].innerHTML = tmpNews[0];
+let data = {
+  text: "",
+};
 
 setInterval(() => {
   if (move === 2) {
@@ -83,8 +85,23 @@ setInterval(() => {
 
 function handleSearchSubmit(event) {
   event.preventDefault();
-  searchText.value;
+  data.text = searchText.value;
   searchText.value = "";
+
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+
+  xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === 4) {
+      document.querySelector("#item").innerHTML = this.responseText;
+    }
+  });
+
+  xhr.open("GET", "http://localhost:3000/webapi");
+  xhr.setRequestHeader("X-Naver-Client-Id", "HH2fJNFYyJKtPz_WyAl8");
+  xhr.setRequestHeader("X-Naver-Client-Secret", "TymPEM45jw");
+
+  xhr.send(JSON.stringify(data));
 }
 
 searchForm.addEventListener("submit", handleSearchSubmit);

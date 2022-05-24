@@ -2,16 +2,10 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => res.send("hello world!"));
-
-app.get("/Path1", function (req, res) {
-  res.send("GET Path1");
-});
-
-app.use(express.static("public"));
+app.use(express.json());
 
 app.get("/webapi", function (req, res) {
-  var searchingData = "삼성";
+  console.log(req.body.text);
   var request = require("request");
   var options = {
     method: "GET",
