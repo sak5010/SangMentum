@@ -1,0 +1,23 @@
+{
+  "name": "sangmentum",
+  "version": "1.0.0",
+  "description": "인터넷과웹기초 텀프로젝트",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sak5010/SangMentum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sak5010/SangMentum/issues"
+  },
+  "homepage": "https://github.com/sak5010/SangMentum#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "request": "^2.88.2"
+  }
+}

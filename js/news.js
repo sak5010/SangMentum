@@ -81,31 +81,8 @@ setInterval(() => {
   }
 }, timer);
 
-function APIresponse() {
-  // WARNING: For GET requests, body is set to null by browsers.
-
-  var xhr = new XMLHttpRequest();
-  xhr.withCredentials = true;
-
-  xhr.addEventListener("readystatechange", function () {
-    if (this.readyState === 4) {
-      console.log(this.responseText);
-    }
-  });
-
-  xhr.open(
-    "GET",
-    "https://openapi.naver.com/v1/search/news.json?query=%EC%82%BC%EC%84%B1"
-  );
-  xhr.setRequestHeader("X-Naver-Client-Id", "HH2fJNFYyJKtPz_WyAl8");
-  xhr.setRequestHeader("X-Naver-Client-Secret", "TymPEM45jw");
-
-  xhr.send();
-}
-
 function handleSearchSubmit(event) {
   event.preventDefault();
-  APIresponse();
   searchText.value;
   searchText.value = "";
 }
