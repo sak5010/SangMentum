@@ -5,13 +5,13 @@ const port = 3000;
 app.use(express.json());
 
 app.get("/webapi", function (req, res) {
-  console.log(req.body.text);
+  let word = req.query.word;
+  console.log(word);
   var request = require("request");
   var options = {
     method: "GET",
     url:
-      "https://openapi.naver.com/v1/search/news.json?query=" +
-      encodeURI(searchingData),
+      "https://openapi.naver.com/v1/search/news.json?query=" + encodeURI(word),
     headers: {
       "X-Naver-Client-Id": "HH2fJNFYyJKtPz_WyAl8",
       "X-Naver-Client-Secret": "TymPEM45jw",
@@ -19,7 +19,8 @@ app.get("/webapi", function (req, res) {
   };
   request(options, function (error, response) {
     if (error) throw new Error(error);
-    console.log(response.body);
+    // console.log(response.body);
+    console.log(word);
     res.send(response.body);
   });
 });

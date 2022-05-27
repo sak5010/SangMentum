@@ -24,10 +24,6 @@ let move = 2;
 let dataCnt = 1;
 let listCnt = 1;
 
-let data = {
-  text: "",
-};
-
 setInterval(() => {
   if (move === 2) {
     first.classList.remove("card_sliding");
@@ -85,7 +81,7 @@ setInterval(() => {
 
 function handleSearchSubmit(event) {
   event.preventDefault();
-  data.text = searchText.value;
+  let word = searchText.value;
   searchText.value = "";
 
   var xhr = new XMLHttpRequest();
@@ -93,15 +89,12 @@ function handleSearchSubmit(event) {
 
   xhr.addEventListener("readystatechange", function () {
     if (this.readyState === 4) {
+      //console.log(this.responseText);
       document.querySelector("#item").innerHTML = this.responseText;
     }
   });
-
-  xhr.open("GET", "http://localhost:3000/webapi");
-  xhr.setRequestHeader("X-Naver-Client-Id", "HH2fJNFYyJKtPz_WyAl8");
-  xhr.setRequestHeader("X-Naver-Client-Secret", "TymPEM45jw");
-
-  xhr.send(JSON.stringify(data));
+  xhr.open("GET", "http://localhost:3000/webapi?word=" + encodeURI(word));
+  xhr.send();
 }
 
 searchForm.addEventListener("submit", handleSearchSubmit);
