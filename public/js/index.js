@@ -3,6 +3,11 @@ const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(express.static("public"));
+
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 app.get("/webapi", function (req, res) {
   let word = req.query.word;
