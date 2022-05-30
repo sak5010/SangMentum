@@ -11,14 +11,9 @@ let tmpNews = [
   "news10",
 ];
 
-const timer = 2000;
-
-const first = document.querySelector("#news-first");
-const second = document.querySelector("#news-second");
-const third = document.querySelector("#news-third");
-
 const searchForm = document.querySelector("#search-form");
 const searchText = document.querySelector("#search-text");
+const newsBoxAnchors = document.querySelectorAll(".news-box > a");
 
 function handleSearchSubmit(event) {
   event.preventDefault();
@@ -34,6 +29,8 @@ function handleSearchSubmit(event) {
       let jsonData = JSON.parse(this.responseText);
       for (let i = 0; i < 10; i++) {
         tmpNews[i] = jsonData.items[i].title;
+        newsBoxAnchors[i].innerHTML = jsonData.items[i].title;
+        newsBoxAnchors[i].href = jsonData.items[i].link;
       }
     }
   });
