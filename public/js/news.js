@@ -90,7 +90,13 @@ function handleSearchSubmit(event) {
   xhr.addEventListener("readystatechange", function () {
     if (this.readyState === 4) {
       //console.log(this.responseText);
-      document.querySelector("#item").innerHTML = this.responseText;
+      let jsonData = JSON.parse(this.responseText);
+      document.querySelector("#item").innerHTML = "<ul>";
+      for (let i = 0; i < 10; i++) {
+        document.querySelector("#item").innerHTML +=
+          "<li>" + jsonData.items[i].title + "</li>";
+      }
+      document.querySelector("#item").innerHTML += "</ul>";
     }
   });
   xhr.open("GET", "http://localhost:3000/webapi?word=" + encodeURI(word));
