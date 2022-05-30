@@ -113,21 +113,56 @@ body {
   height: 20px;
 }
 
-.news-box {
+.news-box-container {
   width: 90%;
-  height: 100%;
+  height: 20px;
+  border: none;
   overflow: hidden;
+}
+
+.news-box {
+  width: 100%;
+  height: 150%;
   position: relative;
+  text-align: center;
+
+  /* animation properties */
+  -moz-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+
+@-webkit-keyframes my-animation {
+  from {
+    -webkit-transform: translateY(550%);
+  }
+  to {
+    -webkit-transform: translateY(-550%);
+  }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateY(550%);
+    -webkit-transform: translateY(550%);
+    transform: translateY(550%);
+  }
+  to {
+    -moz-transform: translateY(-550%);
+    -webkit-transform: translateY(-550%);
+    transform: translateY(-550%);
+  }
 }
 
 .news-box li {
   width: 100%;
   height: 100%;
-  transition: 0.5s;
   position: absolute;
-  transition: top 0.75s;
   top: 100%;
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,16 +171,6 @@ body {
 .news-box li p {
   font-size: 18px;
   line-height: 18px;
-}
-
-.card_sliding {
-  top: 0 !important;
-  z-index: 100 !important;
-}
-
-.card_sliding_after {
-  top: -100% !important;
-  z-index: 10 !important;
 }
 
 .before_slide {
