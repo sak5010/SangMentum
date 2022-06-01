@@ -33,6 +33,11 @@ function paintToDo(newToDoObj) {
 
 function handleToDoSubmit(event) {
   event.preventDefault();
+  if (toDoInput.value.length > 20) {
+    alert("20자 이하로 작성해주세요.");
+    toDoInput.value = "";
+    return;
+  }
   const newToDo = toDoInput.value;
   toDoInput.value = "";
   const newToDoObj = {
