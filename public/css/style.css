@@ -243,5 +243,6 @@ footer {
     width: 95%;
     display: flex;
     justify-content: center;
+    font-size: 13px;
   }
 }
