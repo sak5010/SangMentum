@@ -43,6 +43,11 @@ header > form {
   font-size: 64px;
 }
 
+#greeting::first-letter {
+  color: whitesmoke;
+  font-size: 110%;
+}
+
 nav {
   width: 100%;
   display: flex;
