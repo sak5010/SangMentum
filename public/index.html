@@ -13,57 +13,63 @@
     <title>SangMentum</title>
   </head>
   <body>
-    <form id="login-form" class="hidden">
-      <input
-        type="text"
-        required
-        maxlength="15"
-        placeholder="What is your name?"
-      />
-      <input type="submit" value="Log In" />
-    </form>
-    <h2 id="clock">00:00:00</h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
+    <header>
+      <form id="login-form" class="hidden">
+        <input
+          type="text"
+          required
+          maxlength="15"
+          placeholder="What is your name?"
+        />
+        <input type="submit" value="Log In" />
+      </form>
+    </header>
+    <nav>
+      <h2 id="clock">00:00:00</h2>
+      <h1 id="greeting" class="hidden"></h1>
+      <form id="todo-form">
+        <input type="text" placeholder="Write a To Do and Press Enter" required />
+      </form>
+      <ul id="todo-list"></ul>
+    </nav>
     <div id="search">
       <form id="search-form" name="search_form" action="">
-        <input id="search-text" type="text" />
+        <input id="search-text" type="search" />
         <input type="submit" />
       </form>
     </div>
-    <div id="news">
-      <div class="news-icon">
-        <a href="#search-text"><i class="fas fa-search"></i></a>
-      </div>
-      <div class="news-box-container">
-        <div class="news-box">
-          <a target="_blank">News1</a> </br>
-          <a target="_blank">News2</a> </br>
-          <a target="_blank">News3</a> </br>
-          <a target="_blank">News4</a> </br>
-          <a target="_blank">News5</a> </br>
-          <a target="_blank">News6</a> </br>
-          <a target="_blank">News7</a> </br>
-          <a target="_blank">News8</a> </br>
-          <a target="_blank">News9</a> </br>
-          <a target="_blank">News10</a>
+    <footer>
+      <div id="news">
+        <div class="news-icon">
+          <a href="#search-text"><i class="fas fa-search"></i></a>
+        </div>
+        <div class="news-box-container">
+          <div class="news-box">
+            <a target="_blank">News1</a> </br>
+            <a target="_blank">News2</a> </br>
+            <a target="_blank">News3</a> </br>
+            <a target="_blank">News4</a> </br>
+            <a target="_blank">News5</a> </br>
+            <a target="_blank">News6</a> </br>
+            <a target="_blank">News7</a> </br>
+            <a target="_blank">News8</a> </br>
+            <a target="_blank">News9</a> </br>
+            <a target="_blank">News10</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
-    <div id="weather">
-      <span id="weather-icon"
-        ><img id="wicon" src="" alt="Weather icon"
-      /></span>
-      <span id="weather-main"></span>
-      <span id="weather-temp"></span>
-    </div>
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
+      <div id="weather">
+        <span id="weather-icon"
+          ><img id="wicon" src="" alt="Weather icon"
+        /></span>
+        <span id="weather-main"></span>
+        <span id="weather-temp"></span>
+      </div>
+    </footer>
     <script src="js/background.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/greetings.js"></script>
