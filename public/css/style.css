@@ -194,3 +194,54 @@ footer {
 .hidden {
   display: none;
 }
+
+@media screen and (max-width: 900px) {
+  #clock {
+    font-size: 64px;
+  }
+
+  #login-form input:first-child {
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    color: azure;
+    font-size: 16px;
+  }
+
+  #greeting {
+    margin: 20px 0 60px 0;
+    font-size: 32px;
+  }
+
+  #todo-form [placeholder="Write a To Do and Press Enter"] {
+    width: 80%;
+    color: azure;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  #todo-form input::placeholder {
+    color: azure;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .liTodo {
+    display: flex;
+    justify-content: space-between;
+    float: none;
+    clear: both;
+    font-size: 14px;
+  }
+
+  #quote {
+    position: absolute;
+    top: 10px;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+  }
+}
